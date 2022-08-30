@@ -1,6 +1,7 @@
 //Variables
 $contactBtnColor: #F2C94C;
 $primaryTextColor: #333;
+$primaryFontFamily: "Verdana", sans-serif;
 
 //Primary Styles
 
@@ -19,6 +20,20 @@ img {
     height: auto;
 }
 
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
+a:link,
+a:visited {
+    color: $primaryTextColor;
+}
+
+
 //Container
 .container {
     display: grid;
@@ -30,6 +45,45 @@ img {
 
 header {
     display: flex;
-    flex-flow: row no-wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
+    align-content: center;
+    padding: 12px 8px;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    padding: 0;
+}
+
+.contact-btn a,
+.resume-btn a {
+    width: 100%;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    font-family: $primaryFontFamily;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.contact-btn {
+    background-color: $contactBtnColor;
+    text-transform: uppercase;
+    flex: 2 auto;
+}
+
+.resume-btn {
+    flex: 1;
+}
+
+.contact-btn a {
+    font-size: 1.2rem;
+}
+
+.resume-btn a:hover {
+    background-color: #333;
+    color: #fff;
 }
