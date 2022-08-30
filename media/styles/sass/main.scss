@@ -1,0 +1,35 @@
+//Variables
+$contactBtnColor: #F2C94C;
+$primaryTextColor: #333;
+
+//Primary Styles
+
+html {
+    box-sizing: border-box;
+}
+
+*, 
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+//Container
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(450, auto));
+}
+
+//Top Header
+
+header {
+    display: flex;
+    flex-flow: row no-wrap;
+    justify-content: space-between;
+}
