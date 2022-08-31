@@ -3,12 +3,17 @@ $contactBtnColor: #F2C94C;
 $primaryTextColor: #333;
 $linkFont: "Verdana", sans-serif;
 $primaryFontFamily: Georgia, serif;
+$paragraphBorder: 3px solid $primaryTextColor;
 
 //Primary Styles
 
 html {
     box-sizing: border-box;
     font-family: $primaryFontFamily;
+}
+
+body {
+    background-color: #f6f6f6;
 }
 
 *, 
@@ -80,30 +85,50 @@ a:visited {
         }
     }
     //Hero Section
-    .hero {
+    main {
         display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        row-gap: 20px;
-        figure {
-            margin-left: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            flex: 2 150px;
+        flex-flow: column wrap;
+        .hero {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            row-gap: 50px;
+            figure {
+                margin-left: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+                flex: 2 150px;
+            }
+            h1 {
+                flex: 1 auto;
+                writing-mode: vertical-lr;
+                align-self: center;
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            h1, h2 {
+                font-family: Arial;
+            }
+            p {
+                padding: 10px;
+                text-align: justify;
+                border-top: $paragraphBorder;
+                border-bottom: $paragraphBorder;
+            }
         }
-        h1 {
-            flex: 1 auto;
-            writing-mode: vertical-lr;
-            align-self: center;
-            font-size: 2.2rem;
-        }
-        h2 {
-            font-size: 1.1rem;
-        }
-        p {
-            padding: 10px;
-            text-align: justify;
+        .projects {
+            text-align: center;
+            figure {
+                display: flex;
+                flex-flow: column wrap;
+                row-gap: 20px;
+                img {
+                    border: 2px solid #333;
+                }
+            }
         }
     }
 }

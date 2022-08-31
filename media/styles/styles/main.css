@@ -3,6 +3,10 @@ html {
   font-family: Georgia, serif;
 }
 
+body {
+  background-color: #f6f6f6;
+}
+
 *,
 *::before,
 *::after {
@@ -67,31 +71,51 @@ a:visited {
 .container header .resume-btn {
   flex: 1;
 }
-.container .hero {
+.container main {
+  display: flex;
+  flex-flow: column wrap;
+}
+.container main .hero {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  row-gap: 20px;
+  row-gap: 50px;
 }
-.container .hero figure {
+.container main .hero figure {
   margin-left: 0;
   margin-top: 0;
   margin-bottom: 0;
   flex: 2 150px;
 }
-.container .hero h1 {
+.container main .hero h1 {
   flex: 1 auto;
   writing-mode: vertical-lr;
   align-self: center;
   font-size: 2.2rem;
 }
-.container .hero h2 {
+.container main .hero h2 {
   font-size: 1.1rem;
 }
-.container .hero p {
+.container main .hero h1, .container main .hero h2 {
+  font-family: Arial;
+}
+.container main .hero p {
   padding: 10px;
   text-align: justify;
+  border-top: 3px solid #333;
+  border-bottom: 3px solid #333;
+}
+.container main .projects {
+  text-align: center;
+}
+.container main .projects figure {
+  display: flex;
+  flex-flow: column wrap;
+  row-gap: 20px;
+}
+.container main .projects figure img {
+  border: 2px solid #333;
 }
 
 /*# sourceMappingURL=main.css.map */
