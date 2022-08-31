@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-family: Georgia, serif;
 }
 
 *,
@@ -21,6 +22,12 @@ li {
   display: inline-block;
 }
 
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 0;
+}
+
 a:link,
 a:visited {
   color: #333;
@@ -30,9 +37,9 @@ a:visited {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, minmax(450, auto));
+  row-gap: 30px;
 }
-
-header {
+.container header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -40,15 +47,7 @@ header {
   padding: 12px 8px;
   gap: 10px;
 }
-
-button {
-  border: none;
-  border-radius: 4px;
-  padding: 0;
-}
-
-.contact-btn a,
-.resume-btn a {
+.container header a {
   width: 100%;
   display: inline-block;
   padding: 10px;
@@ -57,24 +56,42 @@ button {
   font-weight: bold;
   font-size: 0.8rem;
 }
-
-.contact-btn {
+.container header .contact-btn {
   background-color: #F2C94C;
   text-transform: uppercase;
   flex: 2 auto;
 }
-
-.resume-btn {
-  flex: 1;
-}
-
-.contact-btn a {
+.container header .contact-btn a {
   font-size: 1.2rem;
 }
-
-.resume-btn a:hover {
-  background-color: #333;
-  color: #fff;
+.container header .resume-btn {
+  flex: 1;
+}
+.container .hero {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+.container .hero figure {
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  flex: 2 150px;
+}
+.container .hero h1 {
+  flex: 1 auto;
+  writing-mode: vertical-lr;
+  align-self: center;
+  font-size: 2.2rem;
+}
+.container .hero h2 {
+  font-size: 1.1rem;
+}
+.container .hero p {
+  padding: 10px;
+  text-align: justify;
 }
 
 /*# sourceMappingURL=main.css.map */
