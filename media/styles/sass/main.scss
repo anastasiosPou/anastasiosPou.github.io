@@ -1,9 +1,14 @@
+//Imports
+@import "./mixins";
+@import "./placeholderClasses";
+
 //Variables
 $contactBtnColor: #F2C94C;
 $primaryTextColor: #333;
 $linkFont: "Verdana", sans-serif;
 $primaryFontFamily: Georgia, serif;
 $paragraphBorder: 3px solid $primaryTextColor;
+
 
 //Primary Styles
 
@@ -22,13 +27,18 @@ body {
     box-sizing: inherit;
 }
 
+h2, h3 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
 img {
     max-width: 100%;
     height: auto;
 }
 
 ul {
-    list-style: none;
+    @extend %list-styling;
 }
 
 li {
@@ -41,6 +51,10 @@ button {
     padding: 0;
 }
 
+a {
+    display: inline-block;
+}
+
 a:link,
 a:visited {
     color: $primaryTextColor;
@@ -49,27 +63,22 @@ a:visited {
 
 //Container
 .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, minmax(450, auto));
-    row-gap: 30px;
+    @include grid(1fr, repeat(2, auto), 30px, 0);
     //Top Header
 
     header {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        align-content: center;
+        @include flexbox(row wrap, initial, space-between, center, 10px, 10px);
         padding: 12px 8px;
-        gap: 10px;
         a {
             width: 100%;
             display: inline-block;
             padding: 10px;
             text-decoration: none;
-            font-family: $linkFont;
-            font-weight: bold;
-            font-size: 0.8rem;
+            font: {
+                family: $linkFont;
+                size: 0.8rem;
+                weight: bold;
+            }
         }
         .contact-btn {
             background-color: $contactBtnColor;
@@ -86,24 +95,20 @@ a:visited {
     }
     //Hero Section
     main {
-        display: flex;
-        flex-flow: column wrap;
+        @include flexbox(column wrap);
         .hero {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            align-items: center;
-            row-gap: 50px;
+            @include flexbox(row wrap, center, center, initial, 40px, 0);
             figure {
-                margin-left: 0;
-                margin-top: 0;
-                margin-bottom: 0;
+                margin: {
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                }
                 flex: 2 150px;
             }
             h1 {
                 flex: 1 auto;
                 writing-mode: vertical-lr;
-                align-self: center;
                 font-size: 2.2rem;
             }
             h2 {
@@ -115,18 +120,53 @@ a:visited {
             p {
                 padding: 10px;
                 text-align: justify;
-                border-top: $paragraphBorder;
-                border-bottom: $paragraphBorder;
+                border: {
+                    top: $paragraphBorder;
+                    bottom: $paragraphBorder
+                }
             }
         }
         .projects {
             text-align: center;
             figure {
-                display: flex;
-                flex-flow: column wrap;
-                row-gap: 20px;
+                @include flexbox(column wrap, initial, initial, initial, 20px, 0);
                 img {
                     border: 2px solid #333;
+                }
+            }
+        }
+        
+        #contact {
+            text-align: center;
+            ul {
+                @include flexbox(column, center, initial, initial, 20px, 0);
+                li {
+                    flex: 1;
+                    width: 50%;
+                    font-size: 1.4rem;
+                    a {
+                        width: 100%;
+                        border-radius: 4px;
+                        text-decoration: none;
+                        padding: 20px 0;
+                        color: #fff;
+                        font: {
+                            family: Helvetica, sans-serif;
+                            weight: bolder;
+                        }
+                    }
+                    #facebook {
+                        background-color: #1877f2;
+                    }
+                    #linkedIn {
+                        background-color: #0353a4;
+                    }
+                    #github {
+                        background-color: #1c2128;
+                    }
+                    #gmail {
+                        background-color: #cc3d32;
+                    }
                 }
             }
         }

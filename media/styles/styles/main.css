@@ -1,3 +1,8 @@
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 html {
   box-sizing: border-box;
   font-family: Georgia, serif;
@@ -13,13 +18,14 @@ body {
   box-sizing: inherit;
 }
 
+h2, h3 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
 img {
   max-width: 100%;
   height: auto;
-}
-
-ul {
-  list-style: none;
 }
 
 li {
@@ -32,6 +38,10 @@ button {
   padding: 0;
 }
 
+a {
+  display: inline-block;
+}
+
 a:link,
 a:visited {
   color: #333;
@@ -40,16 +50,17 @@ a:visited {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, minmax(450, auto));
-  row-gap: 30px;
+  grid-template-rows: repeat(2, auto);
+  gap: 30px 0;
 }
 .container header {
   display: flex;
   flex-flow: row wrap;
+  align-items: initial;
   justify-content: space-between;
   align-content: center;
+  gap: 10px 10px;
   padding: 12px 8px;
-  gap: 10px;
 }
 .container header a {
   width: 100%;
@@ -57,8 +68,8 @@ a:visited {
   padding: 10px;
   text-decoration: none;
   font-family: "Verdana", sans-serif;
-  font-weight: bold;
   font-size: 0.8rem;
+  font-weight: bold;
 }
 .container header .contact-btn {
   background-color: #F2C94C;
@@ -74,13 +85,18 @@ a:visited {
 .container main {
   display: flex;
   flex-flow: column wrap;
+  align-items: initial;
+  justify-content: initial;
+  align-content: initial;
+  gap: initial initial;
 }
 .container main .hero {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
   align-items: center;
-  row-gap: 50px;
+  justify-content: center;
+  align-content: initial;
+  gap: 40px 0;
 }
 .container main .hero figure {
   margin-left: 0;
@@ -91,7 +107,6 @@ a:visited {
 .container main .hero h1 {
   flex: 1 auto;
   writing-mode: vertical-lr;
-  align-self: center;
   font-size: 2.2rem;
 }
 .container main .hero h2 {
@@ -112,10 +127,50 @@ a:visited {
 .container main .projects figure {
   display: flex;
   flex-flow: column wrap;
-  row-gap: 20px;
+  align-items: initial;
+  justify-content: initial;
+  align-content: initial;
+  gap: 20px 0;
 }
 .container main .projects figure img {
   border: 2px solid #333;
+}
+.container main #contact {
+  text-align: center;
+}
+.container main #contact ul {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: initial;
+  align-content: initial;
+  gap: 20px 0;
+}
+.container main #contact ul li {
+  flex: 1;
+  width: 50%;
+  font-size: 1.4rem;
+}
+.container main #contact ul li a {
+  width: 100%;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 20px 0;
+  color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-weight: bolder;
+}
+.container main #contact ul li #facebook {
+  background-color: #1877f2;
+}
+.container main #contact ul li #linkedIn {
+  background-color: #0353a4;
+}
+.container main #contact ul li #github {
+  background-color: #1c2128;
+}
+.container main #contact ul li #gmail {
+  background-color: #cc3d32;
 }
 
 /*# sourceMappingURL=main.css.map */
